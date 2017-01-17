@@ -20,14 +20,29 @@
               "legend": "Include Resources",
               "properties": {
                 "_items": {
-                  "type": "array",
-                  "required": false,
+                  "type":"array",
+                  "required":true,
                   "title": "Resource Items",
                   "items": {
-                    "type": "string",
-                    "required": true,
-                    "inputType": "Asset:other",
-                    "validators": ["required"]
+                    "type":"object",
+                    "required":true,
+                    "properties":{
+                      "resource": {
+                        "title": "Resource",
+                        "type": "string",
+                        "required": true,
+                        "inputType": "Asset:other",
+                        "validators": ["required"]
+                      },
+                      "id": {
+                        "title": "ID",
+                        "type": "string",
+                        "required": true,
+                        "inputType": "Text",
+                        "help": "Used to reference the resource in the course",
+                        "validators": ["required"]
+                      }
+                    }
                   }
                 }
               }
