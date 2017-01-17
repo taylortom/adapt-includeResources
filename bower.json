@@ -1,0 +1,16 @@
+{
+  "name": "adapt-includeResources",
+  "version": "1.0.0",
+  "framework": "^2.0.0",
+  "homepage": "https://github.com/taylortom/adapt-includeResources",
+  "displayName" : "Include Resources",
+  "extension" : "includeResources",
+  "description": "An extension to allow the inclusion of unused resources in the course build.",
+  "main": "empty.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-extension"
+  ],
+  "license": "GPLv3",
+  "targetAttribute": "_includeResources"
+}

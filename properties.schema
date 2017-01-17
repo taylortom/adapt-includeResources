@@ -1,0 +1,52 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "required":false,
+  "properties":{
+    "pluginLocations": {
+      "type":"object",
+      "required":true,
+      "properties":{
+        "config": {
+          "type":"object"
+        },
+        "course": {
+          "type":"object",
+          "properties":{
+            "_includeResources": {
+              "type": "object",
+              "required": false,
+              "legend": "Include Resources",
+              "properties": {
+                "_items": {
+                  "type": "array",
+                  "required": false,
+                  "title": "Resource Items",
+                  "items": {
+                    "type": "string",
+                    "required": true,
+                    "inputType": "Asset:other",
+                    "validators": ["required"]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "contentobject": {
+          "type":"object"
+        },
+        "article": {
+          "type":"object"
+        },
+        "block": {
+          "type":"object"
+        },
+        "component": {
+          "type":"object"
+        }
+      }
+    }
+  }
+}
