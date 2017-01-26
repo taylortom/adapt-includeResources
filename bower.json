@@ -6,7 +6,7 @@
   "displayName" : "Include Resources",
   "extension" : "includeResources",
   "description": "An extension to allow the inclusion of unused resources in the course build.",
-  "main": "empty.js",
+  "main": "/js/includeResources.js",
   "keywords": [
     "adapt-plugin",
     "adapt-extension"
