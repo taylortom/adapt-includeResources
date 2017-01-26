@@ -19,6 +19,15 @@
               "required": false,
               "legend": "Include Resources",
               "properties": {
+                "_replaceLinks": {
+                  "type": "boolean",
+                  "required":true,
+                  "default": true,
+                  "title": "Auto link replace enabled",
+                  "inputType": {"type": "Boolean", "options": [true, false]},
+                  "validators": [],
+                  "help": "If set to 'true', resource ids in components body will be replaced with resource path"
+                },
                 "_items": {
                   "type":"array",
                   "required":true,

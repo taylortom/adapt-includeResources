@@ -2,15 +2,24 @@ define(function(require) {
 
 	var Adapt = require('coreJS/adapt');
 
-	Adapt.on('router:page', function (model) {
-		_.defer(function() {
-			
-			// Loop through components, search for included resources
-			// and replace with link to resources
-			var myComponents = Adapt.components.models;
-			for (var i=0; i<myComponents.length; i++) {
-				myComponents[i].set('body', updateLink(myComponents[i].get('body'));
-			}
+	// When ready check if replace links is enabled
+	// and add page listener as required
+	Adapt.once('app:dataReady', function () {
+
+        // Do not proceed if not required
+		var resources = Adapt.course.get('_includeResources');
+        if (!resources || resources._replaceLinks === false) return;
+		
+		Adapt.on('router:page', function (model) {
+			_.defer(function() {
+				
+				// Loop through components, search for included resources
+				// and replace with link to resources
+				var myComponents = Adapt.components.models;
+				for (var i=0; i<myComponents.length; i++) {
+					myComponents[i].set('body', updateLink(myComponents[i].get('body'));
+				}
+			});
 		});
 	});
 		
