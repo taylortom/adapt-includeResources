@@ -17,7 +17,7 @@ define(function(require) {
 				// and replace with link to resources
 				var myComponents = Adapt.components.models;
 				for (var i=0; i<myComponents.length; i++) {
-					myComponents[i].set('body', updateLink(myComponents[i].get('body'));
+					myComponents[i].set('body', updateLink(myComponents[i].get('body'), resources._logMismatches));
 				}
 			});
 		});
@@ -25,7 +25,7 @@ define(function(require) {
 		
 	// Method checks the argument text for any ids of included resources
 	// and replaces with path to asset
-	function updateLink(text) {
+	function updateLink(text, logMismatches) {
 	
 		// Find all anchors in argument text and store resource links
 		// for comparison to ids of included resources
@@ -41,7 +41,9 @@ define(function(require) {
 			if (link != null) {
 				returnText = returnText.replace(resourceLinks[i], link);
 			} else {
-				console.log("adapt-includeResources: link not found for id: " + resourceLinks[i]);
+				if (logMismatches === true){
+					console.log("adapt-includeResources: link not found for id: " + resourceLinks[i]);
+				}
 			}
 		}
 				
